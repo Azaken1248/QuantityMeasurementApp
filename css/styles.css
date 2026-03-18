@@ -190,12 +190,58 @@ html, body{
 }
 
 .input-container{
-    width: calc((100% - 1rem) / 2);
+    width: calc((100% - 7rem) / 2);
     display: flex;
     margin-bottom: 1rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+}
+
+.operator-row{
+    width: 5rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.operator-dropdown{
+    width: 100%;
+    min-height: 3.4rem;
+    border: 1px solid #8aadf4;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #cad3f5;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.operator-dropdown option{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.operator-dropdown:hover,
+.operator-dropdown:focus{
+    background-color: #8aadf4;
+    color: #1e1e2e;
+    outline: none;
+}
+
+.card.active{
+    border-color: #a6da95;
+    background-color: #313244;
+}
+
+.action-button.active{
+    background-color: #cad3f5;
+    color: #1e1e2e;
+    border-color: #cad3f5;
 }
 
 .input-field{
@@ -280,6 +326,15 @@ option:hover{
 
     .input-container{
         width: 100%;
+    }
+
+    .operator-row{
+        width: 100%;
+        margin-top: -0.25rem;
+    }
+
+    .operator-dropdown{
+        max-width: 8rem;
     }
 
     .input-field{
