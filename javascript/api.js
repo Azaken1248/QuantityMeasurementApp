@@ -106,3 +106,30 @@ export function compareValues(v1, u1, v2, u2, base1, base2) {
 
   return `${v1} ${u1} is EQUAL to ${v2} ${u2}`;
 }
+
+
+export function performArithmetic(v1, v2normalised, op) {
+  if (isNaN(v1) || isNaN(v2normalised)) {
+    throw new Error("Invalid number");
+  }
+
+  switch (op) {
+    case "+":
+      return parseFloat((v1 + v2normalised).toFixed(6));
+
+    case "-":
+      return parseFloat((v1 - v2normalised).toFixed(6));
+
+    case "*":
+      return parseFloat((v1 * v2normalised).toFixed(6));
+
+    case "/":
+      if (v2normalised === 0) {
+        throw new Error("Cannot divide by zero");
+      }
+      return parseFloat((v1 / v2normalised).toFixed(6));
+
+    default:
+      throw new Error(`Unknown operator: "${op}"`);
+  }
+}
