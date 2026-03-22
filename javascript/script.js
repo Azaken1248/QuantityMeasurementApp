@@ -1,5 +1,5 @@
 import { getUnits, getHistory } from "./api.js";
-import { populateDropdown, setActive, toggleOperators } from "./ui.js";
+import { populateDropdown, setActive, toggleOperators, renderHistory } from "./ui.js";
 
 const state = {
   type: "length",
@@ -95,8 +95,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       const historyPayload = await getHistory();
       const items = Array.isArray(historyPayload) ? historyPayload : historyPayload?.history || [];
       cachedHistory = items;
+      renderHistory(cachedHistory);
     } catch (_) {
       cachedHistory = cachedHistory || [];
+      renderHistory(cachedHistory);
     }
   }
 
