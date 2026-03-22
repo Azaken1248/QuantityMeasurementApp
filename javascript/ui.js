@@ -59,10 +59,10 @@ export function showResult(value, unitSymbol) {
 }
 
 export function toggleOperators(show) {
-  const operatorSelector = document.querySelector("#operator-selector");
+  const operatorSelector = document.querySelector(".operator-row");
   
   if (!operatorSelector) {
-    console.warn("Element #operator-selector not found");
+    console.warn("Element .operator-row not found");
     return;
   }
 
