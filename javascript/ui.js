@@ -57,3 +57,14 @@ export function showResult(value, unitSymbol) {
     }, 1500);
   }
 }
+
+export function toggleOperators(show) {
+  const operatorSelector = document.querySelector("#operator-selector");
+  
+  if (!operatorSelector) {
+    console.warn("Element #operator-selector not found");
+    return;
+  }
+
+  operatorSelector.style.display = show ? "flex" : "none";
+}

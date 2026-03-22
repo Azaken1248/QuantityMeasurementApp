@@ -1,5 +1,5 @@
 import { getUnits, getHistory } from "./api.js";
-import { populateDropdown, setActive } from "./ui.js";
+import { populateDropdown, setActive, toggleOperators } from "./ui.js";
 
 const state = {
   type: "length",
@@ -88,12 +88,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const firstActionButton = document.querySelector(".action-button");
     if (firstTypeCard) firstTypeCard.classList.add("active");
     if (firstActionButton) firstActionButton.classList.add("active");
-  }
-
-  function toggleOperators(show) {
-    const operatorRow = document.querySelector(".operator-row") || document.querySelector("[data-operator-row]");
-    if (!operatorRow) return;
-    operatorRow.style.display = show ? "flex" : "none";
   }
 
   async function loadHistory() {
