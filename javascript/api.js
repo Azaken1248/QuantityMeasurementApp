@@ -68,25 +68,3 @@ export async function getHistory() {
   }
 }
 
-export function applyConversion(value, convObj) {
-  if (isNaN(value)) {
-    throw new Error("Invalid number");
-  }
-
-  if (convObj.factor !== null && convObj.factor !== undefined) {
-    const result = value * convObj.factor;
-    return parseFloat(result.toFixed(6));
-  }
-
-  if (convObj.formula) {
-    try {
-      const expr = convObj.formula.replace(/x/g, value);
-      const result = eval(expr);
-      return parseFloat(result.toFixed(6));
-    } catch (error) {
-      throw new Error(`Bad formula: ${error.message}`);
-    }
-  }
-
-  throw new Error("No conversion factor or formula provided");
-}
