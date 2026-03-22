@@ -1,4 +1,4 @@
-function applyConversion(value, convObj) {
+export function applyConversion(value, convObj) {
   if (isNaN(value)) {
     throw new Error("Invalid number");
   }
