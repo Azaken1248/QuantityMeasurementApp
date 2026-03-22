@@ -27,8 +27,8 @@ html, body {
 .layout-wrapper {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
     min-height: 100vh;
     padding-bottom: 2rem;
@@ -75,8 +75,14 @@ html, body {
     border: 2px solid #8aadf4;
     border-radius: 8px;
     padding: 1.5rem;
-    max-height: 645.5px;
+    max-height: 681px;
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.history-sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .history-item{
